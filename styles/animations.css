@@ -9,3 +9,142 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+/* Анимации сердца */
+.like-icon .core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.like-icon .contour {
+  fill: var(--heart-contour);
+  transition: fill 0.1s linear;
+}
+
+.like-icon .sparks {
+  fill: var(--heart-sparks);
+  opacity: 0;
+}
+
+.like-icon .heart {
+  transform-origin: center;
+}
+
+/* Ховер состояния (только если не лайкнуто) */
+.like-button:hover .like-icon:not(.is-liked) .core {
+  fill: #000000;
+  transition: fill 0.3s linear;
+}
+
+.like-button:hover .like-icon:not(.is-liked) .main-body {
+  fill: #000000;
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-button:hover .like-icon:not(.is-liked) .contour {
+  fill: #000000 !important;
+  transition: fill 0.1s linear;
+}
+
+/* Активное состояние (нажатие) - только если не лайкнуто */
+.like-button:active .like-icon:not(.is-liked) .core {
+  fill: #FF0000;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-button:active .like-icon:not(.is-liked) .main-body {
+  fill: #FF0000;
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-button:active .like-icon:not(.is-liked) .contour {
+  fill: #FF0000 !important;
+  transition: fill 0.3s 0.06s linear;
+}
+
+/* Состояние лайка (is-liked) - четвертое действие */
+.like-icon.is-liked .core {
+  fill: #FF0000;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: #FF0000;
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: #FF0000 !important;
+  transition: fill 0.3s 0.06s linear;
+}
+
+/* При ховере на лайкнутое сердце - остается красным */
+.like-button:hover .like-icon.is-liked .core {
+  fill: #FF0000;
+}
+
+.like-button:hover .like-icon.is-liked .main-body {
+  fill: #FF0000;
+}
+
+.like-button:hover .like-icon.is-liked .contour {
+  fill: #FF0000 !important;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s 0.3s ease-in;
+}
+
+.like-icon.is-liked .heart {
+  animation: scale 0.3s 0.1s ease-in;
+}
+
+/* Возврат к исходному состоянию при снятии лайка */
+.like-icon:not(.is-liked) .core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon:not(.is-liked) .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:not(.is-liked) .contour {
+  fill: var(--heart-contour);
+  transition: fill 0.1s linear;
+}
+
+.like-icon:not(.is-liked) .sparks {
+  opacity: 0;
+}
+
+/* Кейфреймы */
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes sparks {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
