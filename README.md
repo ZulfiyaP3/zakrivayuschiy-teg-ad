@@ -51,7 +51,7 @@
 ### Структура проекта:
 
 ```
-https://github.com/ZulfiyaP3/zakrivayuschiy-teg-ad/
+https://github.com/ZulfiyaP3/zakrivayuschiy-teg-ad.git
 ├── index.html          # Главная страница
 ├── styles/             # Стили проекта
 │   ├── styles.css      # Основные стили
