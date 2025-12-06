@@ -3,11 +3,13 @@ const saveButton = document.getElementById('saveButton');
 const dialog = document.getElementById('dialog');
 const dialogButton = document.getElementById('dialogButton');
 
-saveButton.addEventListener('click', () => {
+saveButton.addEventListener('click', (e) => {
+    e.preventDefault();
     dialog.showModal();
 });
 
-dialogButton.addEventListener('click', () => {
+dialogButton.addEventListener('click', (e) => {
+    e.preventDefault();
     dialog.close();
 });
 

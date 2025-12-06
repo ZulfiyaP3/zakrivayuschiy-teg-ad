@@ -1,4 +1,5 @@
 @import url('./variables.css');
+@import url('./animations.css');
 
 /* Общие стили */
 * {
@@ -20,18 +21,14 @@ body {
     overflow-x: visible;
     width: 100%;
     position: relative;
-}
-
-.page {
     font-family: var(--main-font);
     font-variation-settings: 'wght' var(--text-weight);
     background-color: var(--bg-color);
     color: var(--accent-color);
     line-height: 1.1666666666666667;
-    overflow-x: visible;
 }
 
-body {
+.page {
     font-family: var(--main-font);
     font-variation-settings: 'wght' var(--text-weight);
     background-color: var(--bg-color);
@@ -165,11 +162,6 @@ body {
     overflow-x: visible;
 }
 
-.post:first-of-type {
-    position: relative;
-    z-index: 1;
-}
-
 /* Post */
 .post {
     width: var(--content-width);
@@ -183,6 +175,8 @@ body {
 }
 
 .post:first-of-type {
+    position: relative;
+    z-index: 1;
     margin-top: 0;
 }
 
@@ -308,8 +302,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #FFFFFF;
-    border: 2px solid #000000;
     background: transparent;
     border: 2px solid #000000;
     z-index: 2;
@@ -445,8 +437,6 @@ body {
     height: 100%;
     background: #FFFFFF;
     border: 2px solid #000000;
-    background: #FFFFFF;
-    border: 2px solid #000000;
     z-index: 1;
 }
 
@@ -537,7 +527,7 @@ body {
     border: 2px solid #000000;
     position: relative;
     z-index: 1;
-    transition: all 0.2s;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
     overflow: hidden;
 }
 
@@ -608,7 +598,7 @@ body {
     background: #FFFFFF;
     border: 2px solid #000000;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
     position: relative;
     overflow: hidden;
 }
@@ -742,7 +732,7 @@ body {
     cursor: pointer;
     position: relative;
     z-index: 2;
-    transition: all 0.2s;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
     overflow: hidden;
 }
 
@@ -826,6 +816,13 @@ body {
     
     .main {
         position: relative;
+        margin: 0;
+        gap: 0;
+        padding: 0 2px 100px;
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
     }
     
     .post:first-of-type {
@@ -837,8 +834,7 @@ body {
     .header {
         width: 375px;
         height: 327px;
-        margin-top: 50px !important;
-        margin-bottom: 50px;
+        margin: 100px auto 50px;
         margin-left: auto;
         margin-right: auto;
         position: relative;
@@ -871,17 +867,6 @@ body {
 
     .logo-group__html {
         font-size: 49px;
-    }
-
-    .main {
-        margin: 0;
-        gap: 0;
-        padding: 0 2px 100px;
-        align-items: stretch;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        z-index: 1;
     }
 
     .post {
@@ -1046,11 +1031,6 @@ body {
     .save-button__icon {
         width: 28px;
         height: 28px;
-    }
-
-    .header {
-        width: 375px;
-        margin: 100px auto 50px;
     }
 }
 
